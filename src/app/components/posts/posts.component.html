@@ -1,0 +1,29 @@
+
+<div>
+  <button type="button" class="btn btn-dark" (click)="getPost()">Dark</button>
+</div>
+
+<table class="table table-bordered table-dark">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">description</th>
+    <th scope="col">author</th>
+    <th scope="col">city</th>
+    <th scope="col">subject</th>
+    <th scope="col">Link</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of posts">
+    <th scope="row">{{p.id}}</th>
+    <td>{{p.description}}</td>
+    <td>{{p.author}}</td>
+    <td>{{p.city}}</td>
+    <td>{{p.subject}}</td>
+    <td>
+      <a [routerLink]="['/posts/detail',p.id]"> show</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
